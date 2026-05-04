@@ -84,12 +84,10 @@
     }
 
 .navbar {
-  min-height: 115px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
-  padding: 0 12px;
 }
 
     .logo-box {
@@ -115,14 +113,12 @@
       background: rgba(201,162,39,0.06);
     }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 34px;
-      align-items: center;
-      font-weight: 700;
-      font-size: 15px;
-    }
+nav ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  white-space: nowrap; /* evita que se parta */
+}
 
     nav a {
       position: relative;
@@ -721,17 +717,17 @@
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 18px;
-}
+  gap: 14px;
+  flex-shrink: 0; /* 🔥 evita que se aplaste o empuje todo */
 }
 
 .logo-img {
-  height: 95px; /* un poco más grande */
+  height: 80px; /* un poco más grande */
 }
 
 .logo-text {
-  font-size: 24px;
-  line-height: 1.05;
+  font-size: 20px;
+  line-height: 1.1;
   font-weight: 700;
 }
   </style>
