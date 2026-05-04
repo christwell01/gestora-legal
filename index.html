@@ -716,8 +716,20 @@
   display: block;
   filter: drop-shadow(0 12px 25px rgba(0,0,0,0.45));
 }
-    .logo-img {
+   .logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
   height: 60px;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
 }
   </style>
 </head>
@@ -732,8 +744,9 @@
   <header>
     <div class="container navbar">
       <a href="#inicio" class="logo-box" aria-label="Gestora Legal y Asociados">
-        <img src="logo.PNG" alt="Gestora Legal & Asociados" class="logo-img">
-      </a>
+  <img src="logo.PNG" alt="Gestora Legal & Asociados" class="logo-img">
+  <span class="logo-text">Gestora Legal & Asociados</span>
+</a>
 
       <nav aria-label="Menú principal">
         <ul>
