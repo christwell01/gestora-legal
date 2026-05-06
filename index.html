@@ -350,22 +350,27 @@ nav ul {
     .practice-section.alt {
       background: linear-gradient(180deg, var(--gris), #fff);
     }
-    .practice-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 60px;
-    }
+   .practice-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+  width: min(1160px, 90%);
+  margin: auto;
+}
 
-    .practice-image img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
+.practice-text {
+  max-width: 560px;
+  padding-left: 30px;
+}
 
-    .practice-text {
-       max-width: 650px;
-    }
+.practice-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
