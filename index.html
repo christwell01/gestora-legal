@@ -686,20 +686,24 @@ nav ul {
       }
 
       .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+       grid-template-columns: 1fr;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       }
 
       .hero-logo {
         margin: auto;
-        width: 150px;
-        height: 150px;
+        width: 130px;   /* 👈 un poco más pequeño */
+        height: 130px;
         font-size: 52px;
+        transform: translateY(-30px); /* 👈 sube el logo */
       }
 
       .hero-title {
-        border-left: 0;
-        padding-left: 0;
+        font-size: 34px;
+        line-height: 1.2;
       }
 
       .hero-buttons {
