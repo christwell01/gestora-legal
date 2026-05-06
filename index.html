@@ -542,13 +542,17 @@ nav ul {
     }
 
     .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr .9fr;
-      gap: 52px;
-      align-items: start;
-      padding-bottom: 44px;
-      border-bottom: 1px solid rgba(255,255,255,0.14);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
     }
+
+    .footer-grid > div {
+  max-width: 350px;
+}
 
     .footer-logo {
       display: flex;
