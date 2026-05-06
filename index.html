@@ -654,12 +654,12 @@ nav ul {
       }
       
       .whatsapp {
-        bottom: 140px; /* 🔥 baja el botón */
+        bottom: calc(80px + env(safe-area-inset-bottom));
       }
       
       .hero {
         min-height: auto;
-        padding: 100px 0 120px;
+        padding: 100px 0 180px; /* 👈 aumenta el padding inferior */
       }
 
       .hero-buttons {
