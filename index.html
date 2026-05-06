@@ -1,334 +1,996 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gestora Legal & Asociados - Estudio de abogados en Cajamarca. Asesoría legal en derecho público, privado, corporativo, tributario y administrativo." />
+  <title>Gestora Legal & Asociados | Estudio de Abogados</title>
 
-<!-- TIPOGRAFÍA PREMIUM -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+.logo-hero {
+  width: 500px;
+  height: auto;
+  display: block;
+  margin-bottom: 35px;
+}
+    :root {
+      --azul: #06264d;
+      --azul-oscuro: #031a36;
+      --azul-profundo: #021226;
+      --dorado: #c9a227;
+      --dorado-claro: #e2c766;
+      --blanco: #ffffff;
+      --gris: #f4f6f9;
+      --gris-2: #e8edf3;
+      --texto: #071a33;
+      --texto-suave: #4b5b70;
+      --sombra: 0 18px 45px rgba(2, 18, 38, 0.14);
+    }
 
-<title>Gestora Legal & Asociados</title>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-:root{
---azul:#06264d;
---azul-oscuro:#021226;
---dorado:#c9a227;
---gris:#f4f6f9;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: var(--blanco);
+      line-height: 1.55;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--azul-profundo);
+      color: rgba(255,255,255,0.82);
+      font-size: 13px;
+      padding: 9px 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      background: rgba(3, 26, 54, 0.96);
+      color: var(--blanco);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+.navbar {
+  min-height: 100px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 900;
+      font-size: 21px;
+      line-height: 1.05;
+      letter-spacing: -0.8px;
+    }
 
-body{
-font-family:'Inter',sans-serif;
-color:#071a33;
+    .logo-mark {
+      width: 62px;
+      height: 62px;
+      border: 3px solid var(--dorado);
+      color: var(--dorado);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: -1px;
+      background: rgba(201,162,39,0.06);
+    }
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  white-space: nowrap; /* evita que se parta */
 }
 
-/* TIPOGRAFÍA */
-.hero h1,.logo-text,.section-title{
-font-family:'Playfair Display',serif;
-letter-spacing:-1px;
+    nav a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--dorado);
+      transition: width .25s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      background: var(--dorado);
+      color: var(--azul-profundo);
+      padding: 12px 18px;
+      font-weight: 900;
+      font-size: 14px;
+      border-radius: 3px;
+      transition: .25s ease;
+    }
+
+    .header-cta:hover {
+      background: var(--dorado-claro);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 650px;
+      background:
+        radial-gradient(circle at 20% 70%, rgba(201,162,39,0.20), transparent 26%),
+        linear-gradient(90deg, rgba(2,18,38,0.96) 0%, rgba(6,38,77,0.86) 54%, rgba(2,18,38,0.78) 100%),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80") center/cover;
+      color: var(--blanco);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -120px -160px -120px;
+      height: 260px;
+      background: linear-gradient(90deg, transparent, rgba(201,162,39,0.20), transparent);
+      transform: rotate(-7deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 0.9fr 1.3fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .hero-logo {
+      width: 230px;
+      height: 230px;
+      border: 6px solid var(--dorado);
+      color: var(--dorado);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 78px;
+      margin-left: auto;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+      background: rgba(2,18,38,0.35);
+    }
+
+    .hero-title {
+      border-left: 3px solid var(--dorado);
+      padding-left: 38px;
+    }
+
+    .eyebrow {
+      color: var(--dorado-claro);
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 14px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .95;
+      letter-spacing: -2.4px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.88);
+      font-size: clamp(18px, 2vw, 24px);
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 22px;
+      font-weight: 900;
+      font-size: 14px;
+      border-radius: 3px;
+      border: 2px solid transparent;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--dorado);
+      color: var(--azul-profundo);
+    }
+
+    .btn-primary:hover {
+      background: var(--dorado-claro);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.75);
+      color: var(--blanco);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.10);
+      transform: translateY(-2px);
+    }
+
+    .stats {
+      background: var(--blanco);
+      margin-top: -58px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      box-shadow: var(--sombra);
+      border-left: 5px solid var(--dorado);
+      background: var(--blanco);
+    }
+
+    .stat {
+      padding: 30px;
+      border-right: 1px solid var(--gris-2);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--azul);
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--texto-suave);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      max-width: 850px;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.04;
+      margin-bottom: 14px;
+      color: var(--texto);
+      letter-spacing: -1.5px;
+    }
+
+    .section-subtitle {
+      font-size: 19px;
+      color: var(--texto-suave);
+      max-width: 720px;
+    }
+
+    .practice-section {
+      background: var(--blanco);
+    }
+
+    .practice-section.alt {
+      background: linear-gradient(180deg, var(--gris), #fff);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .private .cards {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .card {
+      background: var(--blanco);
+      border: 1px solid var(--gris-2);
+      border-bottom: 4px solid var(--azul);
+      min-height: 385px;
+      transition: .25s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra);
+      border-bottom-color: var(--dorado);
+    }
+
+    .card-image {
+      height: 170px;
+      overflow: hidden;
+      background: var(--gris-2);
+    }
+
+    .card img {
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: .35s ease;
+    }
+
+    .card:hover img {
+      filter: grayscale(45%);
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 24px 22px 26px;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      line-height: 1.06;
+      margin-bottom: 14px;
+      color: var(--azul-profundo);
+      letter-spacing: -0.8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--texto-suave);
+    }
+
+    .about {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      background: var(--blanco);
+      border-top: 10px solid var(--azul);
+    }
+
+    .about-image {
+      min-height: 500px;
+      background:
+        linear-gradient(rgba(2,18,38,0.08), rgba(2,18,38,0.08)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80") center/cover;
+    }
+
+    .about-text {
+      padding: 78px 62px;
+    }
+
+    .about-text h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      margin-bottom: 18px;
+      color: var(--azul-profundo);
+    }
+
+    .about-text p {
+      margin-bottom: 34px;
+      max-width: 560px;
+      color: var(--texto-suave);
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .value {
+      border: 1px solid var(--gris-2);
+      padding: 18px 12px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--azul);
+      background: var(--gris);
+    }
+
+    .value span {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 7px;
+    }
+
+    .quote {
+      background:
+        linear-gradient(90deg, rgba(3,26,54,0.96), rgba(6,38,77,0.96)),
+        url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: var(--blanco);
+      text-align: center;
+      padding: 82px 20px;
+    }
+
+    .quote h2 {
+      font-size: clamp(27px, 4vw, 44px);
+      line-height: 1.08;
+      max-width: 930px;
+      margin: auto;
+      letter-spacing: -1.1px;
+    }
+
+    .quote .line {
+      width: 58px;
+      height: 2px;
+      background: var(--dorado);
+      margin: 30px auto;
+    }
+
+    .quote p {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--dorado-claro);
+      letter-spacing: 1px;
+    }
+
+    .cta {
+      background: var(--gris);
+      padding: 82px 0;
+    }
+
+    .cta-box {
+      background: var(--blanco);
+      box-shadow: var(--sombra);
+      border-left: 6px solid var(--dorado);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      margin-bottom: 18px;
+      color: var(--azul-profundo);
+    }
+
+    .cta p {
+      color: var(--texto-suave);
+      max-width: 720px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cta .btn-outline {
+      color: var(--azul);
+      border-color: var(--azul);
+    }
+
+    footer {
+      background: var(--azul-profundo);
+      color: var(--blanco);
+      padding: 64px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr .9fr;
+      gap: 52px;
+      align-items: start;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .footer-logo .logo-mark {
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+    }
+
+    footer h3 {
+      margin-bottom: 18px;
+      font-size: 19px;
+      color: var(--dorado-claro);
+    }
+
+    footer p, footer a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.86);
+      display: block;
+      margin-bottom: 9px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.10);
+      color: var(--blanco);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 26px;
+      color: rgba(255,255,255,0.45);
+      font-size: 12px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      font-weight: 900;
+      z-index: 1001;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: 1080px) {
+      .cards,
+      .private .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .header-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        display: none;
+      }
+
+      .navbar {
+        min-height: auto;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      nav ul {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 620px;
+        text-align: center;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-logo {
+        margin: auto;
+        width: 150px;
+        height: 150px;
+        font-size: 52px;
+      }
+
+      .hero-title {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .stats-grid,
+      .about,
+      .cta-box,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--gris-2);
+      }
+
+      .about-text {
+        padding: 55px 28px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 34px 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .cards,
+      .private .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+  .hero-logo-img {
+  width: 260px;
+  height: auto;
+  margin-left: auto;
+  display: block;
+  filter: drop-shadow(0 12px 25px rgba(0,0,0,0.45));
+}
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0; /* 🔥 evita que se aplaste o empuje todo */
 }
 
-.container{
-width:min(1160px,90%);
-margin:auto;
+.logo-img {
+  height: 80px;
+  width: auto;        /* 🔥 esto es CLAVE */
+  object-fit: contain;
 }
 
-/* TOPBAR */
-.topbar{
-background:var(--azul-oscuro);
-color:#fff;
-font-size:13px;
-padding:8px;
-text-align:center;
+.logo-text {
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 700;
 }
-
-/* HEADER */
-header{
-background:rgba(2,18,38,0.95);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 0;
-}
-
-.logo-box{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.logo-img{
-height:75px;
-}
-
-.logo-text{
-font-size:22px;
-color:#fff;
-}
-
-/* BOTÓN HEADER */
-.header-cta{
-background:var(--dorado);
-color:#000;
-padding:10px 18px;
-font-weight:700;
-transition:.3s;
-}
-
-.header-cta:hover{
-transform:translateY(-2px);
-}
-
-/* HERO */
-.hero{
-min-height:85vh;
-display:flex;
-align-items:center;
-background:
-linear-gradient(rgba(2,18,38,.85),rgba(2,18,38,.85)),
-url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80") center/cover;
-color:#fff;
-text-align:center;
-}
-
-.hero h1{
-font-size:clamp(40px,6vw,70px);
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-margin-bottom:30px;
-}
-
-/* BOTONES */
-.btn{
-padding:12px 22px;
-font-weight:700;
-display:inline-block;
-margin:5px;
-transition:.3s;
-}
-
-.btn-primary{
-background:var(--dorado);
-color:#000;
-}
-
-.btn-outline{
-border:2px solid #fff;
-color:#fff;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-}
-
-/* STATS */
-.stats{
-background:#fff;
-padding:60px 0;
-text-align:center;
-}
-
-.stats strong{
-display:block;
-font-size:22px;
-color:var(--azul);
-margin-top:20px;
-}
-
-/* SECCIONES */
-section{
-padding:90px 0;
-}
-
-.section-title{
-font-size:40px;
-margin-bottom:20px;
-}
-
-/* CARDS PRO */
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.card{
-background:#fff;
-padding:25px;
-border:1px solid #e8edf3;
-border-bottom:4px solid var(--azul);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-bottom-color:var(--dorado);
-box-shadow:0 20px 40px rgba(0,0,0,.1);
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-/* SECCIÓN ALT */
-.alt{
-background:var(--gris);
-}
-
-/* FOOTER */
-footer{
-background:var(--azul-oscuro);
-color:#fff;
-text-align:center;
-padding:50px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-width:60px;
-height:60px;
-background:#25d366;
-color:#fff;
-display:grid;
-place-items:center;
-border-radius:50%;
-font-size:28px;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-.hero h1{font-size:34px}
-.logo-img{height:60px}
-}
-
-</style>
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="container">
+      <span>Av. Evitamiento Norte 2262 - Cajamarca</span>
+      <span>+51 987 677 926 · gestoralegal.pe@gmail.com</span>
+    </div>
+  </div>
 
-<!-- TOP -->
-<div class="topbar">
-Av. Evitamiento Norte 2262 - Cajamarca · +51 931 677 926
-</div>
+  <header>
+    <div class="container navbar">
+      <a href="#inicio" class="logo-box" aria-label="Gestora Legal y Asociados">
+  <img src="logo.PNG" alt="Gestora Legal & Asociados" class="logo-img">
+  <span class="logo-text">Gestora Legal & Asociados</span>
+</a>
 
-<!-- HEADER -->
-<header>
-<div class="container navbar">
+      <nav aria-label="Menú principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#areas">Áreas de Práctica</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-<div class="logo-box">
-<img src="logo.PNG" class="logo-img">
-<span class="logo-text">Gestora Legal & Asociados</span>
-</div>
+      <a class="header-cta" href="https://wa.me/51931677926" target="_blank">Consulta ahora</a>
+    </div>
+  </header>
 
-<a class="header-cta" href="https://wa.me/51931677926">Consulta ahora</a>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <img src="logo.PNG" class="logo-hero">
+        <div class="hero-title">
+          <div class="eyebrow">Estudio de abogados</div>
+          <h1>GESTORA LEGAL<br>& ASOCIADOS</h1>
+          <p>Asesoría legal integral para proteger tu patrimonio, tu negocio y tus derechos.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="https://wa.me/51931677926?text=Hola,%20quiero%20agendar%20una%20reunion%20legal" target="_blank">Agendar reunión</a>
+            <a class="btn btn-outline" href="#areas">Ver áreas legales</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
-</header>
+    <div class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <strong>Asesoría integral</strong>
+          <span>Soluciones legales para personas, empresas y entidades.</span>
+        </div>
+        <div class="stat">
+          <strong>Enfoque estratégico</strong>
+          <span>Análisis preventivo, defensa legal y acompañamiento continuo.</span>
+        </div>
+        <div class="stat">
+          <strong>Atención directa</strong>
+          <span>Canales de contacto rápidos para evaluación de casos.</span>
+        </div>
+      </div>
+    </div>
 
-<!-- HERO -->
-<section class="hero">
-<div class="container">
+    <section class="practice-section" id="areas">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Áreas de práctica</div>
+          <h2 class="section-title">Derecho Público</h2>
+          <p class="section-subtitle">Acompañamos a nuestros clientes en procedimientos administrativos, contrataciones estatales y defensa estratégica frente a entidades públicas.</p>
+        </div>
 
-<h1>GESTORA LEGAL & ASOCIADOS</h1>
+        <div class="cards">
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Edificio corporativo" />
+            </div>
+            <div class="card-content">
+              <h3>Contrataciones del Estado</h3>
+              <p>Asesoría en procesos de contratación pública, revisión documental, procedimientos administrativos y acompañamiento estratégico.</p>
+            </div>
+          </article>
 
-<p>Asesoría legal integral para proteger tu patrimonio, tu negocio y tus derechos.</p>
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=80" alt="Edificio institucional" />
+            </div>
+            <div class="card-content">
+              <h3>Licitaciones</h3>
+              <p>Preparación, revisión y seguimiento de propuestas para concursos públicos y privados, reduciendo riesgos legales.</p>
+            </div>
+          </article>
 
-<a class="btn btn-primary" href="https://wa.me/51931677926">Agendar reunión</a>
-<a class="btn btn-outline">Ver áreas legales</a>
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Arquitectura moderna" />
+            </div>
+            <div class="card-content">
+              <h3>Derecho Administrativo</h3>
+              <p>Defensa y asesoría ante entidades públicas, procedimientos sancionadores, recursos administrativos y trámites institucionales.</p>
+            </div>
+          </article>
 
-</div>
-</section>
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Sala de reuniones" />
+            </div>
+            <div class="card-content">
+              <h3>Derecho Constitucional</h3>
+              <p>Protección de derechos fundamentales, garantías constitucionales y estrategias legales de defensa preventiva.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- STATS -->
-<section class="stats">
-<div class="container">
+    <section class="practice-section alt private">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Soluciones empresariales</div>
+          <h2 class="section-title">Derecho Privado y Corporativo</h2>
+          <p class="section-subtitle">Brindamos soporte legal para la gestión patrimonial, empresarial, tributaria y contractual de nuestros clientes.</p>
+        </div>
 
-<strong>Asesoría integral</strong>
-<p>Soluciones legales para personas y empresas.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Edificio empresarial" />
+            </div>
+            <div class="card-content">
+              <h3>Derecho Civil</h3>
+              <p>Asesoría patrimonial, contractual, familiar, extrajudicial y defensa de intereses particulares.</p>
+            </div>
+          </article>
 
-<strong>Enfoque estratégico</strong>
-<p>Análisis preventivo y defensa legal.</p>
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=80" alt="Edificio corporativo" />
+            </div>
+            <div class="card-content">
+              <h3>Societario</h3>
+              <p>Constitución de empresas, acuerdos societarios, reorganización empresarial y prevención de conflictos internos.</p>
+            </div>
+          </article>
 
-</div>
-</section>
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Oficinas modernas" />
+            </div>
+            <div class="card-content">
+              <h3>Derecho del Consumidor</h3>
+              <p>Defensa y asesoría en procedimientos de consumo, reclamos, denuncias y cumplimiento normativo.</p>
+            </div>
+          </article>
 
-<!-- DERECHO PUBLICO -->
-<section>
-<div class="container">
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=900&q=80" alt="Ciudad empresarial" />
+            </div>
+            <div class="card-content">
+              <h3>Procesos Ejecutivos</h3>
+              <p>Cobros, recuperaciones, ejecución de obligaciones y estrategias de cobranza judicial.</p>
+            </div>
+          </article>
 
-<h2 class="section-title">Derecho Público</h2>
+          <article class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Sala corporativa" />
+            </div>
+            <div class="card-content">
+              <h3>Derecho Tributario</h3>
+              <p>Planeamiento tributario, defensa fiscal, auditoría legal y acompañamiento empresarial.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="cards">
-<div class="card"><h3>Contrataciones del Estado</h3></div>
-<div class="card"><h3>Derecho Administrativo</h3></div>
-<div class="card"><h3>Derecho Constitucional</h3></div>
-<div class="card"><h3>Derecho Tributario</h3></div>
-</div>
+    <section class="about" id="nosotros">
+      <div class="about-image" aria-label="Sala de reuniones corporativa"></div>
+      <div class="about-text">
+        <div class="eyebrow">Nosotros</div>
+        <h2>Misión</h2>
+        <p>Brindar asesoría legal estratégica, ética y precisa, generando soluciones eficaces que protejan los intereses de nuestros clientes.</p>
 
-</div>
-</section>
+        <h2>Nuestro Enfoque</h2>
+        <p>Actuamos con integridad, compromiso y visión estratégica, construyendo relaciones de confianza y resultados sostenibles.</p>
 
-<!-- DERECHO PRIVADO -->
-<section class="alt">
-<div class="container">
+        <div class="values">
+          <div class="value"><span>⚖️</span>Ética</div>
+          <div class="value"><span>🎯</span>Resultados</div>
+          <div class="value"><span>🏛️</span>Presencia</div>
+        </div>
+      </div>
+    </section>
 
-<h2 class="section-title">Derecho Privado y Corporativo</h2>
+    <section class="quote">
+      <h2>«Brindamos asesoría legal integral con altos estándares de ética y profesionalismo, orientada a proteger tu patrimonio, tu negocio y tus derechos».</h2>
+      <div class="line"></div>
+      <p>GESTORA LEGAL & ASOCIADOS</p>
+    </section>
 
-<div class="cards">
-<div class="card"><h3>Derecho Civil</h3></div>
-<div class="card"><h3>Societario</h3></div>
-<div class="card"><h3>Derecho de la Construcción</h3></div>
-<div class="card"><h3>Derecho del Consumidor</h3></div>
-<div class="card"><h3>Derecho Laboral</h3></div>
-<div class="card"><h3>Procesos Ejecutivos (cobros y recuperos)</h3></div>
-</div>
+    <section class="cta" id="contacto">
+      <div class="container cta-box">
+        <div>
+          <div class="eyebrow">Evaluación de casos</div>
+          <h2>Agenda una consulta legal</h2>
+          <p>Nuestra firma ofrece acompañamiento estratégico integral orientado a resultados. Estamos listos para evaluar tu caso y proponer una ruta legal clara, segura y eficiente.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://wa.me/51987677926" target="_blank">Agendar por WhatsApp</a>
+          <a class="btn btn-primary" href="https://wa.me/51931677926" target="_blank">Agendar por WhatsApp</a>
+          <a class="btn btn-outline" href="mailto:gestoralegal.pe@gmail.com">Enviar un caso</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</div>
-</section>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="logo-mark">GL</div>
+            <span>GESTORA LEGAL<br>& ASOCIADOS</span>
+          </div>
+          <p>Estrategia jurídica para el éxito de sus negocios. Acompañamiento especializado con visión empresarial y alcance nacional.</p>
+        </div>
 
-<!-- ARBITRAJE -->
-<section>
-<div class="container">
+        <div>
+          <h3>CONTACTO</h3>
+          <p>Av. Evitamiento Norte 2262 - Cajamarca</p>
+          <a href="tel:+51931677926">+51 931 677 926</a>
+          <a href="mailto:gestoralegal.pe@gmail.com">gestoralegalcajamarca@gmail.com</a>
+        </div>
 
-<h2 class="section-title">Arbitraje y Conciliación</h2>
+        <div>
+          <h3>SÍGUENOS</h3>
+          <div class="socials">
+            <a href="#">f</a>
+            <a href="#">ig</a>
+            <a href="#">yt</a>
+            <a href="#">x</a>
+            <a href="#">in</a>
+            <a href="#">tk</a>
+          </div>
+        </div>
+      </div>
 
-<div class="cards">
-<div class="card">
-<h3>Arbitraje y Conciliación</h3>
-<p>
-Asesoría y representación en mecanismos alternativos de solución de conflictos,
-permitiendo resolver controversias de forma rápida, eficiente y confidencial.
-</p>
-</div>
-</div>
+      <div class="footer-bottom">
+        <span>© 2026 Gestora Legal. Todos los derechos reservados.</span>
+        <span>Aviso de Privacidad | Términos de Servicio</span>
+      </div>
+    </div>
+  </footer>
 
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Gestora Legal & Asociados</p>
-</footer>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/51931677926">☎</a>
+  <a class="whatsapp" href="https://wa.me/51931677926?text=Hola,%20quiero%20información%20legal" target="_blank" aria-label="Escribir por WhatsApp">☎</a>
+</body>
+</html>
 
 </body>
 </html>
