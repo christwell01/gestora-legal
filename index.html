@@ -354,8 +354,9 @@ nav ul {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
     min-height: 500px;
-    width: min(1160px, 90%);
-    margin: auto;
+    width: 100%;
+    margin: 0;
+   overflow: hidden;
 }
 
 .practice-text {
@@ -371,6 +372,8 @@ nav ul {
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 0;
+    box-shadow: none;
 }
     .cards {
       display: grid;
